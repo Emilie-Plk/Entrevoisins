@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Entrevoisins</string>
+    <string name="tab_neighbour_title">My neighbours</string>
+    <string name="tab_favorites_title">Favorites</string>
+    <string name="activity_new_neighbour">New neighbour</string>
+    <string name="social">https://facebook.com/%1$s</string>
+    <string name="add_favorite_fab">Add favorite</string>
+    <string name="profile_picture_descr">Profile picture of neighbour</string>
+    <string name="phone_logo_descr">phone logo</string>
+    <string name="pin_logo_descr">pin logo</string>
+    <string name="contact_logo_descr">contact logo</string>
+    <string name="back_button_descr">back button</string>
+    <string name="aboutMeTV">À propos de moi</string>
+</resources>
