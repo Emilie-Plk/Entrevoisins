@@ -98,9 +98,8 @@ public class Neighbour implements Serializable {
         return isFavorite;
     }
 
-    public boolean setFavorite(boolean favorite) {
+    public void setFavorite(boolean favorite) {
         isFavorite = favorite;
-        return favorite;
     }
 
     @Override

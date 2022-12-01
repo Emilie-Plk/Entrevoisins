@@ -1,0 +1,190 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.openclassrooms.entrevoisins.ui.neighbour_list.GenericNeighbourListFragment",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_999583306 { 
+   	label=openclassrooms
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_2085685647 { 
+   	label=entrevoisins
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   CompleteNeighbourListFragment11933232[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CompleteNeighbourListFragment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ newInstance(): CompleteNeighbourListFragment</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DummyNeighbourApiService2068480587[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DummyNeighbourApiService</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   neighbours: List&lt;Neighbour&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ createNeighbour(neighbour: Neighbour)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ deleteNeighbour(neighbour: Neighbour)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getNeighbourById(id: long): Neighbour</TD></TR>
+<TR><TD ALIGN="LEFT" >+ updateFavoriteNeighbour(neighbour: Neighbour, id: long)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+FavNeighbourListFragment11933232[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FavNeighbourListFragment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ newInstance(): FavNeighbourListFragment</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+GenericNeighbourListFragment11933232[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)GenericNeighbourListFragment</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   mApiService: NeighbourApiService [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   mRecyclerView: RecyclerView [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- initList()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreate(savedInstanceState: Bundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle): View</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onDeleteNeighbour(event: DeleteNeighbourEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onResume()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onStart()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onStop()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Neighbour1002480703[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Neighbour</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   aboutMe: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   address: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   avatarUrl: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   id: long [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   isFavorite: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   phoneNumber: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ setFavorite(favorite: boolean): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+DummyNeighbourApiService2068480587 -> Neighbour1002480703[label="neighbours
+[0..*]"];
+GenericNeighbourListFragment11933232 -> CompleteNeighbourListFragment11933232[arrowhead=none, arrowtail=empty, dir=both];
+GenericNeighbourListFragment11933232 -> DummyNeighbourApiService2068480587[arrowhead=none];
+GenericNeighbourListFragment11933232 -> FavNeighbourListFragment11933232[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
